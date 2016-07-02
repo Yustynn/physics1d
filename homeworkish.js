@@ -7,6 +7,7 @@ function radToDeg(rad) {
 }
 
 function getLaunchAngle(distance) {
+	// calculate sinLaunchAngle
 	const numerator = gravity * distance;
 	const denominator = Math.pow(initVelocity, 2);
 
@@ -20,11 +21,9 @@ function getLaunchAngle(distance) {
 		sinLaunchAngle += PI;
 	}
 
-
+	// calculate launch angle
 	let radLaunchAngle = 0.5 * Math.asin(sinLaunchAngle);
-
 	while (radLaunchAngle < 0) radLaunchAngle += PI;
-
 
 	return radToDeg(radLaunchAngle);
 }
