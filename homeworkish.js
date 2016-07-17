@@ -28,4 +28,7 @@ function getLaunchAngle(distance) {
 	return radToDeg(radLaunchAngle);
 }
 
-getLaunchAngle(20)
+console.log( getLaunchAngle(20) )
+console.log( getLaunchAngle(40) )
+console.log( getLaunchAngle(100.72) )
+console.log( getLaunchAngle(30) )

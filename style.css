@@ -1,0 +1,75 @@
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:900,400|Orbitron:900|Lobster+Two:400italic);
+body {
+  align-items: center;
+  background-color: #FFDB4C;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px; }
+
+button {
+  background-color: #3762A5;
+  border: 0;
+  color: white;
+  font-family: "Titillium Web";
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 5px;
+  text-transform: uppercase; }
+  button:active {
+    background-color: #4c7ac3;
+    border: 0; }
+  button:visited {
+    background-color: #2a4b7f;
+    border: 0; }
+
+form {
+  background-color: #EDEFF1;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  padding: 10px; }
+
+label {
+  color: #8A8A8A;
+  font-family: "Titillium Web";
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px; }
+
+input {
+  border: 0;
+  border-radius: 6px;
+  padding: 10px;
+  text-align: center;
+  width: 75%;
+  color: black;
+  font-family: "Titillium Web";
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 3px; }
+
+img {
+  height: 150px; }
+
+h1 {
+  color: black;
+  font-family: "Orbitron";
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 7px;
+  text-transform: uppercase; }
+
+p {
+  font-family: "Lobster Two", cursive;
+  font-size: 14px;
+  text-align: center; }
+
+#distance-input {
+  background-color: white;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  width: 100%; }
+
+/*# sourceMappingURL=style.css.map */
