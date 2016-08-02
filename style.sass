@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:900,400|Orbitron:900|Lobster+Two:400italic)
+@import url(https://fonts.googleapis.com/css?family=Orbitron:900|Lobster+Two:400italic)
 
 // font mixins
 =lobster
@@ -11,72 +11,114 @@
   font-weight: $weight
   letter-spacing: $letter-spacing
 
-=orbitron($weight: 900, $size: 14px, $letter-spacing: 1, $color: black)
+=orbitron($size: 14px, $color: black, $letter-spacing: 1, $weight: 900)
   +font('Orbitron', $weight, $size, $letter-spacing, $color)
-
-=titillium($weight: 900, $size: 14px, $letter-spacing: 1, $color: black)
-  +font('Titillium Web', $weight, $size, $letter-spacing, $color)
-
 
 =uppercase
   text-transform: uppercase
 
 body
   align-items: center
-  background-color: #FFDB4C
+  background-color: #3F5973
   display: flex
   flex-direction: column
-  justify-content: center
-  padding: 10px
-
-button
-  background-color: #3762A5
-  border: 0
-  +titillium(900, 36px, 5px, white)
-  +uppercase
-
-  &:active
-    background-color: lighten(#3762A5, 10%)
-    border: 0
-
-  &:visited
-    background-color: darken(#3762A5, 10%)
-    border: 0
-
-
-form
-  background-color: #EDEFF1
-  border-radius: 6px
-  display: flex
-  flex-direction: column
-  min-width: 300px
-  padding: 10px
-
-label
-  +titillium(400, 14px, 2px, #8A8A8A)
-
-input
-  border: 0
-  border-radius: 6px
-  padding: 10px
-  text-align: center
-  width: 75%
-  +titillium(400, 30px, 3px)
-
-img
-  height: 150px
+  justify-content: flex-start
 
 h1
-  +orbitron(900, 30px, 7px)
+  +orbitron(36px, white)
   +uppercase
 
-p
-  font-family: 'Lobster Two', cursive
-  font-size: 14px
-  text-align: center
 
-#distance-input
-  background-color: white
-  border-radius: 6px
-  margin-bottom: 20px
-  width: 100%
+h2
+  +orbitron(36px, #3F3F3F, 3px)
+  +uppercase
+
+header
+  align-self: stretch
+  align-items: center
+  background-color: #4D6D8C
+  display: flex
+  flex-direction: column
+
+main
+  align-self: stretch
+  align-items: center
+  display: flex
+  flex-direction: column
+  flex-grow: 1
+  justify-content: center
+  padding: 0 10%
+
+section
+  align-self: stretch
+  align-items: center
+  display: flex
+  flex-direction: column
+  flex-grow: 1
+  justify-content: center
+
+.light
+  color: white
+
+section.graph
+  background-color: #29394A
+
+#ask-isaac
+  background-color: #86919C
+
+#isaac-says
+  background-color: #5A626A
+
+#back-to-reality
+  background-color: #A9B7C4
+// button
+//   background-color: #3762A5
+//   border: 0
+//   +titillium(900, 36px, 5px, white)
+//   +uppercase
+//
+//   &:active
+//     background-color: lighten(#3762A5, 10%)
+//     border: 0
+//
+//   &:visited
+//     background-color: darken(#3762A5, 10%)
+//     border: 0
+//
+//
+// form
+//   background-color: #EDEFF1
+//   border-radius: 6px
+//   display: flex
+//   flex-direction: column
+//   min-width: 300px
+//   padding: 10px
+//
+// label
+//   +titillium(400, 14px, 2px, #8A8A8A)
+//
+// input
+//   border: 0
+//   border-radius: 6px
+//   padding: 10px
+//   text-align: center
+//   width: 75%
+//   +titillium(400, 30px, 3px)
+//
+// img
+//   height: 150px
+//
+// h1
+//   +orbitron(900, 30px, 7px)
+//   +uppercase
+//
+// p
+//   font-family: 'Lobster Two', cursive
+//   font-size: 14px
+//   text-align: center
+//
+// #distance-input
+//   background-color: white
+//   border-radius: 6px
+//   margin-bottom: 20px
+//   width: 100%
