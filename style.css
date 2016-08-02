@@ -1,4 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron:900|Lobster+Two:400italic);
+a {
+  background-color: #DDD24F;
+  padding: 20px;
+  text-transform: uppercase; }
+
 body {
   align-items: center;
   background-color: #3F5973;
@@ -7,6 +12,7 @@ body {
   justify-content: flex-start; }
 
 h1 {
+  margin: 0;
   color: white;
   font-family: "Orbitron";
   font-size: 36px;
@@ -15,6 +21,7 @@ h1 {
   text-transform: uppercase; }
 
 h2 {
+  margin: 0;
   color: #3F3F3F;
   font-family: "Orbitron";
   font-size: 36px;
@@ -22,12 +29,32 @@ h2 {
   letter-spacing: 3px;
   text-transform: uppercase; }
 
+h3 {
+  font-family: "Lobster Two", cursive;
+  margin: 0; }
+
+h4 {
+  color: #3F3F3F;
+  font-family: "Orbitron";
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: #DDD24F;
+  margin: 0;
+  text-align: center; }
+
 header {
   align-self: stretch;
   align-items: center;
   background-color: #4D6D8C;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  padding: 20px; }
+
+input {
+  height: 80px;
+  width: 150px; }
 
 main {
   align-self: stretch;
@@ -49,8 +76,26 @@ section {
 .light {
   color: white; }
 
+.input {
+  align-items: stretch;
+  background-color: #D8D8D8;
+  flex-direction: row; }
+
+.x-half {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: center; }
+
+.y-half, .x-half.prediction, #back-to-reality {
+  flex-direction: column; }
+
+.y-half {
+  align-self: stretch;
+  flex-grow: 1; }
+
 section.graph {
-  background-color: #29394A; }
+  background-color: #29394A;
+  min-height: 200px; }
 
 #ask-isaac {
   background-color: #86919C; }

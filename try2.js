@@ -1,4 +1,4 @@
-cdconst chalk = require('chalk');
+const chalk = require('chalk');
 const regression = require('regression');
 
 const logIt = (color) => (message) => { console.log(chalk[color](message)) };
@@ -19,7 +19,7 @@ const M = 2;
 
 const V = sqrt(K * pow(DX, 2) / M);
 
-const ERROR_RANGE = 0.1;
+const ERROR_RANGE = 0.05;
 
 /* UTILITY FUNCTIONS */
 function radToDeg(rad) {
@@ -67,7 +67,7 @@ const estimateTheta = (desiredDistance) => {
 
 /* USAGE */
 
-estimateTheta(0.2);
+estimateTheta(1.3);
 
 //
 // const data = [[0,1],[32, 67], [12, 79], [1000, null]];

@@ -3,6 +3,12 @@
     <meta name="viewport" content="initial-scale=1">
     <link rel='stylesheet' href='normalize.css' />
     <link rel='stylesheet' href='style.css' />
+
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="jquery.flot.js"></script>
+		<script src="regression.js"></script>
+		<script src="app.js"></script>
+
     <title>A+ Project</title>
   </head>
 
@@ -14,22 +20,29 @@
 
     <main>
       <section class='graph'>
-        GRAPH
       </section>
-
+      <h4></h4>
       <section class='input'>
-        <div class='x-half'>
+        <div class='x-half prediction'>
           <div class='y-half' id='ask-isaac'>
             <h2>Ask Isaac</h2>
             <h3>get the next estimate</h3>
+            <input type="text" id='prediction-distance' />
+            <label>meters</label>
+            <a class='submit inline' id='prediction-btn'>Eureka!</a>
           </div>
           <div class='y-half' id='isaac-says'>
             <h2 class='light'>Isaac Says</h2>
-            <h2 class='light'>SOMETHING!</h2>
+            <h2 class='light' id='prediction-value'>SOMETHING!</h2>
           </div>
         </div>
         <div class='x-half' id='back-to-reality'>
           <h2>Back to Reality!</h2>
+          <input type="text" id='add-angle' />
+          <label>radians</label>
+          <input type="text" id='add-distance' />
+          <label>meters</label>
+          <a class='submit' id='add-btn'>Eureka!</a>
         </div>
       </section>
     </main>

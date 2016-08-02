@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron:900|Lobster+Two:400italic)
 
+// variables
+$yellow: #DDD24F
+
 // font mixins
 =lobster
   font-family: 'Titillium Web', sans-serif
@@ -17,6 +20,11 @@
 =uppercase
   text-transform: uppercase
 
+a
+  background-color: $yellow
+  padding: 20px
+  text-transform: uppercase
+
 body
   align-items: center
   background-color: #3F5973
@@ -25,13 +33,27 @@ body
   justify-content: flex-start
 
 h1
+  margin: 0
   +orbitron(36px, white)
   +uppercase
 
 
 h2
+  margin: 0
   +orbitron(36px, #3F3F3F, 3px)
   +uppercase
+
+h3
+  font-family: 'Lobster Two', cursive
+  margin: 0
+
+h4
+  +orbitron(14px, #3F3F3F, 1px)
+  +uppercase
+  background-color: $yellow
+  // color: white
+  margin: 0
+  text-align: center
 
 header
   align-self: stretch
@@ -39,6 +61,11 @@ header
   background-color: #4D6D8C
   display: flex
   flex-direction: column
+  padding: 20px
+
+input
+  height: 80px
+  width: 150px
 
 main
   align-self: stretch
@@ -60,8 +87,26 @@ section
 .light
   color: white
 
+.input
+  align-items: stretch
+  background-color: #D8D8D8
+  flex-direction: row
+
+.x-half
+  display: flex
+  flex-basis: 100%
+  justify-content: center
+
+.y-half, .x-half.prediction, #back-to-reality
+  flex-direction: column
+
+.y-half
+  align-self: stretch
+  flex-grow: 1
+
 section.graph
   background-color: #29394A
+  min-height: 200px
 
 #ask-isaac
   background-color: #86919C
@@ -71,6 +116,8 @@ section.graph
 
 #back-to-reality
   background-color: #A9B7C4
+
+
 // button
 //   background-color: #3762A5
 //   border: 0
