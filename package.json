@@ -1,0 +1,24 @@
+{
+  "name": "physics-1d",
+  "version": "1.0.0",
+  "description": "",
+  "main": "homeworkish.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yustynn/physics1d.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yustynn/physics1d/issues"
+  },
+  "homepage": "https://github.com/Yustynn/physics1d#readme",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "regression": "^1.2.1"
+  }
+}
