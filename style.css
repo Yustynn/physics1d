@@ -1,7 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron:400,700|Lobster+Two:400italic);
+* {
+  box-sizing: border-box; }
+
 a {
-  background-color: #DDD24F;
-  padding: 20px;
+  background-color: #ff9033;
+  padding: 30px;
+  color: white;
+  font-family: "Orbitron";
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 8px;
   text-transform: uppercase; }
 
 body {
@@ -31,7 +39,8 @@ h2 {
 
 h3 {
   font-family: "Lobster Two", cursive;
-  margin: 0; }
+  margin: 0;
+  padding-bottom: 20px; }
 
 h4 {
   color: #3F3F3F;
@@ -59,6 +68,7 @@ input {
   font-size: 24px;
   font-weight: 700;
   letter-spacing: 3px;
+  border: none;
   height: 80px;
   width: 150px;
   text-align: center; }
@@ -89,16 +99,18 @@ section {
   justify-content: center; }
 
 #equation {
-  background-color: #ff9033;
+  background-color: #DDD24F;
   padding: 5px 0;
   width: 100%; }
 
 .row {
+  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: center; }
 
 .inputs {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center; }
@@ -112,15 +124,22 @@ section {
 
 .add-distance {
   position: relative; }
+  .add-distance input {
+    border-left: 1px #cdcdcd solid; }
   .add-distance label {
     bottom: 10px;
     right: 10px;
     position: absolute; }
 
-.add-distance.prediction {
+.prediction.add-distance {
   margin: 0 auto;
   width: 150px; }
-  .add-distance.prediction label {
+  .prediction.add-distance div {
+    display: inline-block;
+    position: absolute; }
+  .prediction.add-distance input {
+    border-left: none; }
+  .prediction.add-distance label {
     bottom: 10px;
     left: 10px;
     right: auto;
@@ -156,17 +175,19 @@ section.graph {
   min-height: 200px; }
 
 #ask-isaac {
-  background-color: #86919C; }
+  background-color: #719bc5; }
 
 #isaac-says {
-  background-color: #5A626A; }
+  background-color: #5f7790; }
 
 #back-to-reality {
-  background-color: #A9B7C4;
+  background-color: #8aa8c5;
   padding: 20px; }
+  #back-to-reality a {
+    width: 300px; }
 
 #prediction-value {
-  color: #ff7400;
+  color: #DDD24F;
   font-size: 30px; }
 
 /*# sourceMappingURL=style.css.map */

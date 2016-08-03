@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron:400,700|Lobster+Two:400italic)
 
 // variables
-$orange: lighten(#ff7400, 10%)
+$yellow: #DDD24F
 
 // font mixins
 =lobster
@@ -20,10 +20,14 @@ $orange: lighten(#ff7400, 10%)
 =uppercase
   text-transform: uppercase
 
+*
+  box-sizing: border-box
+
 a
-  background-color: #DDD24F
-  padding: 20px
-  text-transform: uppercase
+  background-color: lighten(#ff7400, 10%)
+  padding: 30px
+  +orbitron(20px, white, 8px)
+  +uppercase
 
 body
   align-items: center
@@ -46,6 +50,7 @@ h2
 h3
   font-family: 'Lobster Two', cursive
   margin: 0
+  padding-bottom: 20px
 
 h4
   +orbitron(14px, #3F3F3F, 1px)
@@ -67,9 +72,11 @@ header
 
 input
   +orbitron(24px, black, 3px, 700)
+  border: none
   height: 80px
   width: 150px
   text-align: center
+
 
 label
   +orbitron(12px)
@@ -93,16 +100,18 @@ section
   justify-content: center
 
 #equation
-  background-color: $orange
+  background-color: $yellow
   padding: 5px 0
   width: 100%
 
 .row
+  align-items: center
   display: flex
   flex-direction: row
   justify-content: center
 
 .inputs
+  align-items: center
   display: flex
   flex-direction: column
   justify-content: center
@@ -118,14 +127,24 @@ section
 .add-distance
   position: relative
 
+  input
+    border-left: 1px lighten(grey, 30%) solid
+
   label
     bottom: 10px
     right: 10px
     position: absolute
 
-.add-distance.prediction
+.prediction.add-distance
   margin: 0 auto
   width: 150px
+
+  div
+    display: inline-block
+    position: absolute
+
+  input
+    border-left: none
 
   label
     bottom: 10px
@@ -163,15 +182,18 @@ section.graph
   min-height: 200px
 
 #ask-isaac
-  background-color: #86919C
+  background-color: #719bc5
 
 #isaac-says
-  background-color: #5A626A
+  background-color: #5f7790
 
 #back-to-reality
-  background-color: #A9B7C4
+  background-color: #8aa8c5
   padding: 20px
 
+  a
+    width: 300px
+
 #prediction-value
-  color: #ff7400
+  color: $yellow
   font-size: 30px
