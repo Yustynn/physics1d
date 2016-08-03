@@ -131,12 +131,14 @@ section {
     right: 10px;
     position: absolute; }
 
+.prediction-field {
+  display: inline-block;
+  position: relative; }
+
 .prediction.add-distance {
   margin: 0 auto;
-  width: 150px; }
-  .prediction.add-distance div {
-    display: inline-block;
-    position: absolute; }
+  width: 150px;
+  display: flex; }
   .prediction.add-distance input {
     border-left: none; }
   .prediction.add-distance label {
@@ -181,8 +183,7 @@ section.graph {
   background-color: #5f7790; }
 
 #back-to-reality {
-  background-color: #8aa8c5;
-  padding: 20px; }
+  background-color: #8aa8c5; }
   #back-to-reality a {
     width: 300px; }
 
