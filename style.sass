@@ -1,7 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron:900|Lobster+Two:400italic)
 
 // variables
-$yellow: darken(#DDD24F, 5%)
+$orange: lighten(#ff7400, 10%)
+$green: #31a248
 
 // font mixins
 =lobster
@@ -21,7 +22,7 @@ $yellow: darken(#DDD24F, 5%)
   text-transform: uppercase
 
 a
-  background-color: $yellow
+  background-color: $green
   padding: 20px
   text-transform: uppercase
 
@@ -62,6 +63,9 @@ header
   flex-direction: column
   padding: 20px
 
+  h3
+    color: white
+
 input
   +orbitron(24px)
   height: 80px
@@ -86,9 +90,20 @@ section
   justify-content: center
 
 #equation
-  background-color: $yellow
+  background-color: $orange
   padding: 5px 0
   width: 100%
+
+.inputs
+  display: flex
+  flex-direction: row
+  justify-content: center
+  position: relative
+
+  label
+    position: absolute
+    bottom: 0
+    left: 0
 
 .light
   color: white
@@ -128,3 +143,7 @@ section.graph
 #back-to-reality
   background-color: #A9B7C4
   padding: 20px
+
+#prediction-value
+  color: #ff7400
+  font-size: 30px

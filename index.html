@@ -5,6 +5,9 @@
     <link rel='stylesheet' href='style.css' />
 
 
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 		<script src="jquery-3.1.0.min.js"></script>
 		<script src="jquery.flot.js"></script>
 		<script src="regression.js"></script>
@@ -46,10 +49,16 @@
         </div>
         <div class='x-half' id='back-to-reality'>
           <h2>Back to Reality!</h2>
-          <input type="text" id='add-angle' />
-          <label>degrees</label>
-          <input type="text" id='add-distance' />
-          <label>meters</label>
+          <div class='inputs'>
+            <div class='add-angle'>
+              <input type="text" id='add-angle' />
+              <label>degrees</label>
+            </div>
+            <div class='add-distance'>
+              <input type="text" id='add-distance' />
+              <label>meters</label>
+            </div>
+          </div>
           <a class='submit' id='add-btn'>Eureka!</a>
         </div>
       </section>

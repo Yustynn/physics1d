@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron:900|Lobster+Two:400italic);
 a {
-  background-color: #d9cd3a;
+  background-color: #31a248;
   padding: 20px;
   text-transform: uppercase; }
 
@@ -50,6 +50,8 @@ header {
   display: flex;
   flex-direction: column;
   padding: 20px; }
+  header h3 {
+    color: white; }
 
 input {
   color: black;
@@ -79,9 +81,19 @@ section {
   justify-content: center; }
 
 #equation {
-  background-color: #d9cd3a;
+  background-color: #ff9033;
   padding: 5px 0;
   width: 100%; }
+
+.inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative; }
+  .inputs label {
+    position: absolute;
+    bottom: 0;
+    left: 0; }
 
 .light {
   color: white; }
@@ -121,5 +133,9 @@ section.graph {
 #back-to-reality {
   background-color: #A9B7C4;
   padding: 20px; }
+
+#prediction-value {
+  color: #ff7400;
+  font-size: 30px; }
 
 /*# sourceMappingURL=style.css.map */

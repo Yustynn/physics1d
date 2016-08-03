@@ -44,7 +44,7 @@ const getPrediction = (y, eqn) => {
 			return currSum + polynomial * pow(x, exp)
 		}, 0 );
 
-		if (abs(estY - y) <= ERROR_RANGE) return x;
+		if (abs(estY - y) <= ERROR_RANGE) return x.toPrecision(7);
 	}
 	return null;
 }
@@ -54,19 +54,23 @@ const getEqnStr = (eqn) => {
 	const rightHandSide = eqn.map((factor, exp) => {
 		let transformed = '';
 
-		// prepend '+' or '-' and factor
+		// to 7sf
 		factor = factor.toPrecision(7);
 
+		// prepend '+' or '-' and factor
 		transformed += (factor[0] === '-') ? factor : `+${factor}`;
 
 		// append x^ if exp>0
-		if (exp) transformed += `x^${exp}`;
+		if (exp !== 0 && exp !==1) transformed += `\\theta^${exp}`;
+		// append x^ if exp>0
+		if (exp === 1) transformed += `\\theta`;
 		// remove sign if first term
 		if (exp === eqn.length - 1) transformed = transformed.slice(1);
+
 		return transformed;
 	}).reverse().join('');
 
-	return `y = ${rightHandSide}`;
+	return `\\[distance = ${rightHandSide}\\]`;
 }
 
 
@@ -142,7 +146,6 @@ $(function(){
 
     const distance = +$('#prediction-distance').val();
 		const angle = getPrediction(distance, myRegression.equation);
-		console.log(angle)
 
     if (distance && angle) {
       const d = [
@@ -153,11 +156,11 @@ $(function(){
       plot(d);
 
       const predictedDistance = +lastEl(myRegression.points)[0];
-      console.log(predictedDistance)
-      console.log(myRegression.points, myRegression)
+
+			const predictedAngle = getPrediction(distance, myRegression.equation);
 
 
-      $('#prediction-value').text(getPrediction(distance, myRegression.equation))
+      $('#prediction-value').text(`Try ${predictedAngle}deg`)
     }
 
     // clear input
