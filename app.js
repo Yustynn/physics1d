@@ -119,10 +119,10 @@ const plot = (d = data) => {
     { data: myRegression.points },
     { data, lines: { show: false }, points: { show: true } },
   ]);
+
+	// redo mathjaxing
+	MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 }
-
-
-
 
 $(function(){
   plot();
@@ -166,7 +166,4 @@ $(function(){
     // clear input
     $('#add-angle').val('');
   })
-
-
-
 });

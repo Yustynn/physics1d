@@ -60,7 +60,8 @@ header {
   flex-direction: column;
   padding: 20px; }
   header h3 {
-    color: white; }
+    color: white;
+    padding: 0; }
 
 input {
   color: black;
@@ -134,18 +135,13 @@ section {
 .prediction-field {
   display: inline-block;
   position: relative; }
+  .prediction-field input {
+    border-left: none; }
 
 .prediction.add-distance {
   margin: 0 auto;
   width: 150px;
   display: flex; }
-  .prediction.add-distance input {
-    border-left: none; }
-  .prediction.add-distance label {
-    bottom: 10px;
-    left: 10px;
-    right: auto;
-    position: absolute; }
 
 .light {
   color: white; }
