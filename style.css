@@ -1,6 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Orbitron:900|Lobster+Two:400italic);
+@import url(https://fonts.googleapis.com/css?family=Orbitron:400,700|Lobster+Two:400italic);
 a {
-  background-color: #31a248;
+  background-color: #DDD24F;
   padding: 20px;
   text-transform: uppercase; }
 
@@ -16,8 +16,8 @@ h1 {
   color: white;
   font-family: "Orbitron";
   font-size: 36px;
-  font-weight: 900;
-  letter-spacing: 1;
+  font-weight: 700;
+  letter-spacing: 1px;
   text-transform: uppercase; }
 
 h2 {
@@ -25,7 +25,7 @@ h2 {
   color: #3F3F3F;
   font-family: "Orbitron";
   font-size: 36px;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase; }
 
@@ -37,7 +37,7 @@ h4 {
   color: #3F3F3F;
   font-family: "Orbitron";
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin: 0;
@@ -57,11 +57,19 @@ input {
   color: black;
   font-family: "Orbitron";
   font-size: 24px;
-  font-weight: 900;
-  letter-spacing: 1;
+  font-weight: 700;
+  letter-spacing: 3px;
   height: 80px;
   width: 150px;
   text-align: center; }
+
+label {
+  color: black;
+  font-family: "Orbitron";
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  letter-spacing: 3px; }
 
 main {
   align-self: stretch;
@@ -85,15 +93,38 @@ section {
   padding: 5px 0;
   width: 100%; }
 
-.inputs {
+.row {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: center; }
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.add-angle {
   position: relative; }
-  .inputs label {
-    position: absolute;
-    bottom: 0;
-    left: 0; }
+  .add-angle label {
+    bottom: 10px;
+    left: 10px;
+    position: absolute; }
+
+.add-distance {
+  position: relative; }
+  .add-distance label {
+    bottom: 10px;
+    right: 10px;
+    position: absolute; }
+
+.add-distance.prediction {
+  margin: 0 auto;
+  width: 150px; }
+  .add-distance.prediction label {
+    bottom: 10px;
+    left: 10px;
+    right: auto;
+    position: absolute; }
 
 .light {
   color: white; }

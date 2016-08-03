@@ -36,8 +36,10 @@
             <div>
               <h2>Ask Isaac</h2>
               <h3>get the next estimate</h3>
-              <input type="text" id='prediction-distance' />
-              <label>meters</label>
+                <div class='predicton add-distance'>
+                  <input type="text" id='prediction-distance' />
+                  <label>meters</label>
+                </div>
               <a class='submit inline' id='prediction-btn'>Eureka!</a>
             </div>
           </div>
@@ -49,17 +51,20 @@
         </div>
         <div class='x-half' id='back-to-reality'>
           <h2>Back to Reality!</h2>
+          <h3>add a real-world data point</h3>
           <div class='inputs'>
-            <div class='add-angle'>
-              <input type="text" id='add-angle' />
-              <label>degrees</label>
+            <div class='row'>
+              <div class='add-angle'>
+                <input type="text" id='add-angle' />
+                <label>degrees</label>
+              </div>
+              <div class='add-distance'>
+                <input type="text" id='add-distance' />
+                <label>meters</label>
+              </div>
             </div>
-            <div class='add-distance'>
-              <input type="text" id='add-distance' />
-              <label>meters</label>
-            </div>
+            <a class='submit' id='add-btn'>Eureka!</a>
           </div>
-          <a class='submit' id='add-btn'>Eureka!</a>
         </div>
       </section>
     </main>

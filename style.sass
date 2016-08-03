@@ -1,28 +1,27 @@
-@import url(https://fonts.googleapis.com/css?family=Orbitron:900|Lobster+Two:400italic)
+@import url(https://fonts.googleapis.com/css?family=Orbitron:400,700|Lobster+Two:400italic)
 
 // variables
 $orange: lighten(#ff7400, 10%)
-$green: #31a248
 
 // font mixins
 =lobster
   font-family: 'Titillium Web', sans-serif
 
-=font($font-family, $weight: 900, $size: 14px, $letter-spacing: 1, $color: black)
+=font($font-family, $weight: 700, $size: 14px, $letter-spacing: 1px, $color: black)
   color: $color
   font-family: $font-family
   font-size: $size
   font-weight: $weight
   letter-spacing: $letter-spacing
 
-=orbitron($size: 14px, $color: black, $letter-spacing: 1, $weight: 900)
+=orbitron($size: 14px, $color: black, $letter-spacing: 1px, $weight: 700)
   +font('Orbitron', $weight, $size, $letter-spacing, $color)
 
 =uppercase
   text-transform: uppercase
 
 a
-  background-color: $green
+  background-color: #DDD24F
   padding: 20px
   text-transform: uppercase
 
@@ -67,10 +66,14 @@ header
     color: white
 
 input
-  +orbitron(24px)
+  +orbitron(24px, black, 3px, 700)
   height: 80px
   width: 150px
   text-align: center
+
+label
+  +orbitron(12px)
+  letter-spacing: 3px
 
 main
   align-self: stretch
@@ -94,16 +97,41 @@ section
   padding: 5px 0
   width: 100%
 
-.inputs
+.row
   display: flex
   flex-direction: row
   justify-content: center
+
+.inputs
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+.add-angle
   position: relative
 
   label
+    bottom: 10px
+    left: 10px
     position: absolute
-    bottom: 0
-    left: 0
+
+.add-distance
+  position: relative
+
+  label
+    bottom: 10px
+    right: 10px
+    position: absolute
+
+.add-distance.prediction
+  margin: 0 auto
+  width: 150px
+
+  label
+    bottom: 10px
+    left: 10px
+    right: auto
+    position: absolute
 
 .light
   color: white
