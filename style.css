@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron:900|Lobster+Two:400italic);
 a {
-  background-color: #DDD24F;
+  background-color: #d9cd3a;
   padding: 20px;
   text-transform: uppercase; }
 
@@ -40,7 +40,6 @@ h4 {
   font-weight: 900;
   letter-spacing: 1px;
   text-transform: uppercase;
-  background-color: #DDD24F;
   margin: 0;
   text-align: center; }
 
@@ -53,8 +52,14 @@ header {
   padding: 20px; }
 
 input {
+  color: black;
+  font-family: "Orbitron";
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1;
   height: 80px;
-  width: 150px; }
+  width: 150px;
+  text-align: center; }
 
 main {
   align-self: stretch;
@@ -73,6 +78,11 @@ section {
   flex-grow: 1;
   justify-content: center; }
 
+#equation {
+  background-color: #d9cd3a;
+  padding: 5px 0;
+  width: 100%; }
+
 .light {
   color: white; }
 
@@ -82,10 +92,12 @@ section {
   flex-direction: row; }
 
 .x-half {
+  text-align: center; }
+
+.x-half {
   display: flex;
   flex-basis: 100%;
-  justify-content: center;
-  text-align: center; }
+  justify-content: center; }
 
 .y-half, .x-half.prediction, #back-to-reality {
   flex-direction: column; }
@@ -93,6 +105,7 @@ section {
 .y-half {
   align-self: stretch;
   flex-grow: 1;
+  padding: 20px;
   text-align: center; }
 
 section.graph {
@@ -106,6 +119,7 @@ section.graph {
   background-color: #5A626A; }
 
 #back-to-reality {
-  background-color: #A9B7C4; }
+  background-color: #A9B7C4;
+  padding: 20px; }
 
 /*# sourceMappingURL=style.css.map */

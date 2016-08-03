@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron:900|Lobster+Two:400italic)
 
 // variables
-$yellow: #DDD24F
+$yellow: darken(#DDD24F, 5%)
 
 // font mixins
 =lobster
@@ -50,7 +50,6 @@ h3
 h4
   +orbitron(14px, #3F3F3F, 1px)
   +uppercase
-  background-color: $yellow
   // color: white
   margin: 0
   text-align: center
@@ -64,8 +63,10 @@ header
   padding: 20px
 
 input
+  +orbitron(24px)
   height: 80px
   width: 150px
+  text-align: center
 
 main
   align-self: stretch
@@ -84,6 +85,11 @@ section
   flex-grow: 1
   justify-content: center
 
+#equation
+  background-color: $yellow
+  padding: 5px 0
+  width: 100%
+
 .light
   color: white
 
@@ -93,10 +99,12 @@ section
   flex-direction: row
 
 .x-half
+  text-align: center
+
+.x-half
   display: flex
   flex-basis: 100%
   justify-content: center
-  text-align: center
 
 .y-half, .x-half.prediction, #back-to-reality
   flex-direction: column
@@ -104,6 +112,7 @@ section
 .y-half
   align-self: stretch
   flex-grow: 1
+  padding: 20px
   text-align: center
 
 section.graph
@@ -118,3 +127,4 @@ section.graph
 
 #back-to-reality
   background-color: #A9B7C4
+  padding: 20px
