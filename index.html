@@ -4,6 +4,7 @@
     <link rel='stylesheet' href='normalize.css' />
     <link rel='stylesheet' href='style.css' />
 
+
 		<script src="http://code.jquery.com/jquery.min.js"></script>
 		<script src="jquery.flot.js"></script>
 		<script src="regression.js"></script>
@@ -21,7 +22,9 @@
     <main>
       <section class='graph'>
       </section>
-      <h4></h4>
+      
+      <h4 id='equation'></h4>
+
       <section class='input'>
         <div class='x-half prediction'>
           <div class='y-half' id='ask-isaac'>
@@ -39,7 +42,7 @@
         <div class='x-half' id='back-to-reality'>
           <h2>Back to Reality!</h2>
           <input type="text" id='add-angle' />
-          <label>radians</label>
+          <label>degrees</label>
           <input type="text" id='add-distance' />
           <label>meters</label>
           <a class='submit' id='add-btn'>Eureka!</a>

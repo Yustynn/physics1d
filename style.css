@@ -84,14 +84,16 @@ section {
 .x-half {
   display: flex;
   flex-basis: 100%;
-  justify-content: center; }
+  justify-content: center;
+  text-align: center; }
 
 .y-half, .x-half.prediction, #back-to-reality {
   flex-direction: column; }
 
 .y-half {
   align-self: stretch;
-  flex-grow: 1; }
+  flex-grow: 1;
+  text-align: center; }
 
 section.graph {
   background-color: #29394A;

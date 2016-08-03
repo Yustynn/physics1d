@@ -1,13 +1,16 @@
 const { PI, abs, pow, sin, sqrt } = Math;
 
 /* CONSTANTS */
-const ERROR_RANGE = 0.1;
+const ERROR_RANGE = 0.0001;
 
 const K = 70.833333;
 const DX = 0.09;
 const G = 9.81;
 const L = 0.14;
 const M = 2;
+
+/* VARIABLES */
+let myRegression = null;
 
 /* UTILITY FUNCTIONS */
 // currently unused, it's just in case
@@ -35,6 +38,37 @@ const computeDistance = (theta) => {
   return numerator / denominator;
 }
 
+const getPrediction = (y, eqn) => {
+  for (let x = 0; x < 90; x += 0.01) {
+		const estY = eqn.reduce( (currSum, polynomial, exp) => {
+			return currSum + polynomial * pow(x, exp)
+		}, 0 );
+
+		if (abs(estY - y) <= ERROR_RANGE) return x;
+	}
+	return null;
+}
+
+const getEqnStr = (eqn) => {
+
+	const rightHandSide = eqn.map((factor, exp) => {
+		let transformed = '';
+
+		// prepend '+' or '-' and factor
+		factor = factor.toPrecision(7);
+
+		transformed += (factor[0] === '-') ? factor : `+${factor}`;
+
+		// append x^ if exp>0
+		if (exp) transformed += `x^${exp}`;
+		// remove sign if first term
+		if (exp === eqn.length - 1) transformed = transformed.slice(1);
+		return transformed;
+	}).reverse().join('');
+
+	return `y = ${rightHandSide}`;
+}
+
 
 /* TERMINAL FUNCTIONS */
 const estimateTheta = (desiredDistance) => {
@@ -56,44 +90,25 @@ const estimateTheta = (desiredDistance) => {
 
 /* USAGE */
 
-// const data = [];
-
-// temp dummy data
-
+// [angle, distance]
 const data = [
-  [30,128.6],
-  [40,145.4],
-  [50,153],
-  [60,144.2],
-  [70,127],
-  [80,110],
-  [90,92.8]
-].map( (el) => [degToRad(el[0]), el[1]/100] );
-
-// populate w/ theoretical data
-const startingXs = [0,1,2];
-
-// startingXs.forEach((x) => {
-//   d.push([x, estimateTheta(x)])
-// })
-
-// $(function() {
-//   // obtain graph
-//   // const data = [...d];
-//   const myRegression = regression('exponential', data, 2);
-//
-//   // Plot the result
-//   $.plot($('.graph'), [
-//     {data: myRegression.points, label: 'Polynomial'},
-//     {data: data, lines: { show: false }, points: { show: true }},
-//   ]);
-// })
+  [0,0],
+  [38.865,1.286],
+  [49.38,1.454],
+  [58.675,1.53],
+  [66.75,1.442],
+  [73.605,1.27],
+  [79.24,1.10],
+  [83.655,0.928],
+]
 
 const plot = (d = data) => {
   // do the regression (polynomial to the third degree)
-  const myRegression = regression('polynomial', d, 2);
+	d.sort( (a, b) => a[0] - b[0] )
+  myRegression = regression('polynomial', d, 3);
+	console.log(myRegression)
 
-  $('h4').text(myRegression.string);
+  $('h4').text( getEqnStr(myRegression.equation) );
 
   // Plot the result
   $.plot($('.graph'), [
@@ -108,19 +123,12 @@ const plot = (d = data) => {
 $(function(){
   plot();
 
-  const addEls = {
-    angle: $('#add-angle')[0],
-    distance: $('#add-distance')[0],
-  }
-  console.log(addEls)
-
-
   $('#add-btn').click( (e) => {
     e.preventDefault();
     angle = +$('#add-angle').val();
     distance = +$('#add-distance').val();
 
-    data.push([distance, angle]);
+    data.push([angle, distance]);
     plot();
 
     // clear input
@@ -132,25 +140,30 @@ $(function(){
   $('#prediction-btn').click( (e) => {
     e.preventDefault();
 
-    distance = +$('#prediction-distance').val();
+    const distance = +$('#prediction-distance').val();
+		const angle = getPrediction(distance, myRegression.equation);
+		console.log(angle)
 
-    if (distance) {
+    if (distance && angle) {
       const d = [
         ...data,
-        [distance, null]
+        [angle, distance]
       ];
 
       plot(d);
 
-      const myRegression = regression('polynomial', d, 3);
-      const predictedDistance = +lastEl(myRegression.points)[1];
+      const predictedDistance = +lastEl(myRegression.points)[0];
       console.log(predictedDistance)
+      console.log(myRegression.points, myRegression)
 
-      $('#prediction-value').text(predictedDistance.toPrecision(3))
+
+      $('#prediction-value').text(getPrediction(distance, myRegression.equation))
     }
 
     // clear input
     $('#add-angle').val('');
   })
+
+
 
 });
